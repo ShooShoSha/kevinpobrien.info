@@ -1,13 +1,51 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name='robots' content='noarchive'>
+    <title>{{ title|default('Kevin O\'Brien, Developer') }}</title>
+    <link rel='icon' type='image/png' href='assets/favicon.png'>
+    <link href='vendor/twbs/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
+    <link href='vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
+    <link href='vendor/components/font-awesome/css/font-awesome.min.css' rel='stylesheet' />
+    <link href='{{ asset("css/styles.css") }}' rel='stylesheet' />
+</head>
+<body>
+<nav class='navbar navbar-default' role='navigation'>
+    <div class='container'>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar-collapse'>
+                &#9776;
+                <!--<span class='glyphicon glyphicon-menu-hamburger' aria-hidden='true'></span>-->
+            </button>
+            <a class='navbar-brand' href='/'>Kevin O&apos;Brien</a>
+        </div>
+        <div id='navbar-collapse' class='navbar-collapse collapse'>
+            <ul class='nav nav-pills navbar-right'>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class='container'>
+    {% block main %}
+    {% endblock %}
+</main>
+<footer class='navbar navbar-static-bottom'>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <a class='btn' href='https://goo.gl/3gYOg5' title='StackOverflow profile'><i class='fa fa-stack-overflow fa-lg' aria-hidden='true'></i></a>
+                <a class='btn' href='https://goo.gl/H8Qr5U' title='GitHub profile'><i class='fa fa-github fa-lg' aria-hidden='true'></i></a>
+                <a class='btn' href='https://goo.gl/L3BVDC' title='LinkedIn profile'><i class='fa fa-linkedin fa-lg' aria-hidden='true'></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src='vendor/components/jquery/jquery.min.js'></script>
+<script src='vendor/twbs/bootstrap/dist/js/bootstrap.min.js'></script>
+{% block script %}
+{% endblock %}
+</body>
 </html>

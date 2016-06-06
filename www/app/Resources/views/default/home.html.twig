@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% set style = 'index' %}
+{% block title %}Kevin O&apos;Brien, Developer{% endblock %}
+{% block main %}
+    <article class='row'>
+        <section class='col-sm-8'>
+            <p>
+                This is a work in progress as much as I am a full-stack developer in progress. Since I wanted to start learning the frontend, I figured it was time to set up this site.
+            </p>
+            <p>
+                As of now, I am throwing things at the wall and seeing what sticks. Currently this site is powered by:
+            <ul>
+                <li>Nginx</li>
+                <li>PHP</li>
+                <li>Composer dependencies:
+                    <ul>
+                        <li>Silex</li>
+                        <li>Twig</li>
+                        <li>Bootstrap</li>
+                        <li>Font Awesome</li>
+                    </ul>
+                </li>
+                <li>Let's Encrypt</li>
+            </ul>
+            I am also trying out some of the HTML5 semantic tagging.
+            </p>
+        </section>
+    </article>
+{% endblock %}
